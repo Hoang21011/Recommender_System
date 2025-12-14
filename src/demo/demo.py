@@ -285,7 +285,7 @@ def main():
     # ============================================================
     # MODE 2: TÌM MÓN TƯƠNG TỰ (VISUAL SIMILARITY - CLIP)
     # ============================================================
-    elif mode == "📸 Find similar dishes (Visual Match)":
+    elif mode == "📸 Similar Dishes":
         st.subheader("Find dishes with similar images")
         
         uploaded_file = st.file_uploader("Upload a sample dish image:", type=["jpg", "png", "jpeg"])
