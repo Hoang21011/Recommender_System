@@ -7,11 +7,11 @@ from PIL import Image
 import torch
 from transformers import CLIPProcessor, CLIPTokenizer,CLIPModel
 
-IMAGE_EMBED_PATH = r"D:\project\cv_final\embeddings\image_embeds_500.npy"
-TEXT_EMBED_PATH = r"D:\project\cv_final\embeddings\text_embeddings_cleaned.npy"
-META_PATH = r"D:\project\cv_final\embeddings\meta_clean_original_paths.pkl"
-TEXT_FAISS_PATH = r"D:\project\cv_final\embeddings\faiss_text_index_cleaned.bin"
-IMAGE_FAISS_PATH = r"D:\project\cv_final\embeddings\faiss_all_images.index"
+IMAGE_EMBED_PATH = r"D:\food_recommender\embeddings\image_embeds_all.npy"
+TEXT_EMBED_PATH = r"D:\food_recommender\embeddings\text_embeddings_cleaned_captioned_and_normalized.npy"
+META_PATH = r"D:\food_recommender\embeddings\meta_clean_original_paths.pkl"
+TEXT_FAISS_PATH = r"D:\food_recommender\embeddings\faiss_text_index_final.bin"
+IMAGE_FAISS_PATH = r"D:\food_recommender\embeddings\faiss_all_images.index"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 TEXT_MODEL_NAME = "openai/clip-vit-base-patch32"
@@ -136,7 +136,7 @@ if __name__ == "__main__":
         print(res)
 
     # Example 2: Query by image
-    q_img = "D:\project\cv_final\data\Food-Images\-bloody-mary-tomato-toast-with-celery-and-horseradish-56389813.jpg"
+    q_img = r"D:\food_recommender\data\Food Images\-bloody-mary-tomato-toast-with-celery-and-horseradish-56389813.jpg"
     print("Query by image:", q_img)
     results = retrieval.search_by_image(q_img)
     for res in results:
